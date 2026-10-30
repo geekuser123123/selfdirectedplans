@@ -14,6 +14,7 @@ assets/
   css/styles.css            All styles (tokens, components, sections, responsive)
   js/main.js                Nav, scroll reveal, service detail dialogs, form submit
   img/                      Responsive WebP crops + og-image.jpg
+  video/                    Background loops (WebM + MP4) and posters
   fonts/                    Self-hosted Teko & Poppins (Google Fonts, SIL OFL)
   brand/                    Logo system (see below)
 netlify/functions/contact.mjs   Form handler: validation, spam filter, webhook relay
@@ -38,6 +39,21 @@ pip install fonttools brotli
 python3 scripts/build-logo.py
 node scripts/render-logo-png.js
 ```
+
+## Background videos (`assets/video/`)
+
+- `hero-loop`: a slow camera drift across the hero office photo.
+- `contours-loop`: flowing copper contour lines, used behind "How It Works" and Contact.
+
+Both are rendered with `node scripts/render-videos.js`, which needs ffmpeg. Each one is about 0.5–0.6 MB as WebM, with an MP4 fallback.
+
+To keep the site fast and accessible, the videos:
+- load only after the page has finished loading, so they don't delay the first paint;
+- play only while they're on screen;
+- are skipped for visitors who have reduced motion or data saver turned on;
+- each have a visible pause button, and the visitor's choice is remembered.
+
+To use real footage instead, replace the `.webm` and `.mp4` files with the same names. Keep each file short (10–20 s), muted, and ideally under 3 MB.
 
 ## Deploy on Netlify
 

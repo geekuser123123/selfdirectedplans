@@ -50,6 +50,11 @@
     Cache-Control = "public, max-age=2592000"
 
 [[headers]]
+  for = "/assets/video/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
   for = "/assets/brand/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"

@@ -79,15 +79,21 @@
 
   <main id="main">
     <!-- 1. HERO -->
-    <section class="hero section-dark" id="home" aria-labelledby="hero-title">
+    <section class="hero section-dark has-video" id="home" aria-labelledby="hero-title">
       <div class="hero-media">
         <img src="/assets/img/hero-1216.webp"
              srcset="/assets/img/hero-640.webp 640w, /assets/img/hero-960.webp 960w, /assets/img/hero-1216.webp 1216w"
              sizes="(max-width: 900px) 100vw, 50vw"
              width="1216" height="832" fetchpriority="high" decoding="async"
              alt="Bright modern office with floor-to-ceiling windows overlooking a city skyline">
+        <video class="bg-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-bg-video data-webm="/assets/video/hero-loop.webm" data-mp4="/assets/video/hero-loop.mp4"></video>
       </div>
       <span class="geo-line geo-line--hero" aria-hidden="true"></span>
+      <button class="video-toggle video-toggle--hero" type="button" data-video-toggle aria-pressed="false">
+        <svg class="vt-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+        <svg class="vt-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5l12 7.5-12 7.5z"/></svg>
+        <span class="visually-hidden" data-video-label>Pause background video</span>
+      </button>
       <div class="container hero-inner">
         <div class="hero-copy">
           <p class="eyebrow">Independent Retirement Possibilities</p>
@@ -105,6 +111,19 @@
         </div>
       </div>
     </section>
+
+    <div class="topic-strip">
+      <div class="container">
+        <ul class="topic-list" aria-label="Topics we cover">
+          <li>Solo 401(k) Plans</li>
+          <li>Self-Directed IRAs</li>
+          <li>Roth Options</li>
+          <li>Rollovers &amp; Transfers</li>
+          <li>Alternative Asset Education</li>
+          <li>Account Setup Support</li>
+        </ul>
+      </div>
+    </div>
 
     <!-- 2. INTRODUCTION -->
     <section class="section section-ivory intro" aria-labelledby="intro-title">
@@ -150,22 +169,6 @@
         <div class="card-grid">
           <article class="service-card reveal">
             <div class="service-media">
-              <img src="/assets/img/service-ira-600.webp"
-                   srcset="/assets/img/service-ira-480.webp 480w, /assets/img/service-ira-600.webp 600w"
-                   sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
-                   width="600" height="450" loading="lazy" decoding="async"
-                   alt="Modern office workspace with ergonomic chairs beside tall city-view windows">
-            </div>
-            <div class="service-body">
-              <span class="service-index">01</span>
-              <h3 class="card-title">Self-Directed IRA</h3>
-              <p>Learn about self-directed individual retirement accounts, eligible alternative assets, account requirements, and setup options.</p>
-              <button class="text-link" type="button" data-dialog-open="detail-ira" aria-haspopup="dialog">Learn More <span aria-hidden="true">&rarr;</span></button>
-            </div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-media">
               <img src="/assets/img/service-401k-626.webp"
                    srcset="/assets/img/service-401k-480.webp 480w, /assets/img/service-401k-626.webp 626w"
                    sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
@@ -173,10 +176,26 @@
                    alt="Row of white desks and office chairs in a light-filled corner office">
             </div>
             <div class="service-body">
-              <span class="service-index">02</span>
+              <span class="service-index">01</span>
               <h3 class="card-title">Self-Directed 401(k)</h3>
               <p>Explore retirement account structures designed for eligible self-employed individuals and business owners, including applicable plan rules and setup requirements.</p>
               <button class="text-link" type="button" data-dialog-open="detail-401k" aria-haspopup="dialog">Learn More <span aria-hidden="true">&rarr;</span></button>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-media">
+              <img src="/assets/img/service-ira-600.webp"
+                   srcset="/assets/img/service-ira-480.webp 480w, /assets/img/service-ira-600.webp 600w"
+                   sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                   width="600" height="450" loading="lazy" decoding="async"
+                   alt="Modern office workspace with ergonomic chairs beside tall city-view windows">
+            </div>
+            <div class="service-body">
+              <span class="service-index">02</span>
+              <h3 class="card-title">Self-Directed IRA</h3>
+              <p>Learn about self-directed individual retirement accounts, eligible alternative assets, account requirements, and setup options.</p>
+              <button class="text-link" type="button" data-dialog-open="detail-ira" aria-haspopup="dialog">Learn More <span aria-hidden="true">&rarr;</span></button>
             </div>
           </article>
 
@@ -199,9 +218,61 @@
       </div>
     </section>
 
+    <!-- 3b. ASSET CATEGORIES -->
+    <section class="section section-ivory assets" aria-labelledby="assets-title">
+      <div class="container">
+        <header class="section-head section-head--split reveal">
+          <div>
+            <p class="eyebrow eyebrow--dark">Beyond the Standard Menu</p>
+            <h2 class="section-title" id="assets-title">Asset Categories You Can Learn About.</h2>
+          </div>
+          <p class="assets-intro">Self-directed accounts may hold a wider range of assets than conventional plans. We help you understand how each category works within the rules.</p>
+        </header>
+        <div class="asset-grid">
+          <div class="asset reveal">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 28V13l12-8 12 8v15"/><path d="M4 28h24M12 28v-9h8v9"/></svg>
+            <h3 class="asset-title">Real Estate</h3>
+            <p>Residential, commercial, or land holdings owned by the account, subject to rules on personal use and related parties.</p>
+          </div>
+          <div class="asset reveal">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="9" width="22" height="18"/><path d="M12 9V5h8v4M5 16h22M14 16v3h4v-3"/></svg>
+            <h3 class="asset-title">Private Companies</h3>
+            <p>Interests in private businesses and LLCs, subject to ownership limits and prohibited transaction rules.</p>
+          </div>
+          <div class="asset reveal">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 4h13l5 5v19H7z"/><path d="M20 4v5h5M11 15h10M11 20h10M11 25h6"/></svg>
+            <h3 class="asset-title">Promissory Notes</h3>
+            <p>Loans made by the account to unrelated borrowers under written terms.</p>
+          </div>
+          <div class="asset reveal">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 25l4-8h16l4 8z"/><path d="M10 17l3-6h6l3 6"/></svg>
+            <h3 class="asset-title">Precious Metals</h3>
+            <p>Certain bullion that meets IRS fineness standards, held by an approved depository rather than at home.</p>
+          </div>
+          <div class="asset reveal">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M16 5v22M5 16h22"/><circle cx="16" cy="16" r="4"/></svg>
+            <h3 class="asset-title">Private Placements</h3>
+            <p>Private funds and offerings, subject to investor eligibility and the custodian’s requirements.</p>
+          </div>
+          <div class="asset reveal">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 27h22M7 27V14M13 27V14M19 27V14M25 27V14M4 14l12-8 12 8z"/></svg>
+            <h3 class="asset-title">Traditional Investments</h3>
+            <p>Stocks, bonds, and funds can typically still be held alongside alternative assets.</p>
+          </div>
+        </div>
+        <p class="assets-note">Eligibility depends on IRS rules, your plan documents, and custodian policies. Some assets, including life insurance and most collectibles, are not permitted in IRAs. Listing a category is educational and is not a recommendation to invest.</p>
+      </div>
+    </section>
+
     <!-- 4. HOW IT WORKS -->
-    <section class="section section-dark process" aria-labelledby="process-title">
+    <section class="section section-dark process has-video" aria-labelledby="process-title">
+      <div class="section-video" aria-hidden="true"><video class="bg-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-bg-video data-webm="/assets/video/contours-loop.webm" data-mp4="/assets/video/contours-loop.mp4"></video></div>
       <span class="geo-corner" aria-hidden="true"></span>
+      <button class="video-toggle" type="button" data-video-toggle aria-pressed="false">
+        <svg class="vt-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+        <svg class="vt-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5l12 7.5-12 7.5z"/></svg>
+        <span class="visually-hidden" data-video-label>Pause background video</span>
+      </button>
       <div class="container">
         <header class="section-head section-head--split reveal">
           <div>
@@ -251,6 +322,10 @@
                width="600" height="682" loading="lazy" decoding="async"
                alt="Minimal office interior with warm wood paneling, a white desk and city light">
           <span class="about-media-line" aria-hidden="true"></span>
+          <div class="about-badge" aria-hidden="true">
+            <img src="/assets/brand/icon-light.svg" alt="" width="40" height="40">
+            <p><span>Education &amp; Setup Support</span>Self-Directed 401(k)s &amp; IRAs</p>
+          </div>
         </figure>
         <div class="split-copy reveal">
           <p class="eyebrow eyebrow--dark">Who We Are</p>
@@ -350,7 +425,13 @@
     </section>
 
     <!-- 8. CONTACT -->
-    <section class="section section-dark contact" id="contact" aria-labelledby="contact-title">
+    <section class="section section-dark contact has-video" id="contact" aria-labelledby="contact-title">
+      <div class="section-video" aria-hidden="true"><video class="bg-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-bg-video data-webm="/assets/video/contours-loop.webm" data-mp4="/assets/video/contours-loop.mp4"></video></div>
+      <button class="video-toggle" type="button" data-video-toggle aria-pressed="false">
+        <svg class="vt-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+        <svg class="vt-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5l12 7.5-12 7.5z"/></svg>
+        <span class="visually-hidden" data-video-label>Pause background video</span>
+      </button>
       <span class="geo-line geo-line--contact" aria-hidden="true"></span>
       <div class="container contact-layout">
         <div class="contact-copy reveal">
