@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /scripts/
+Disallow: /netlify/
+
+# TODO: update to the confirmed production domain.
+Sitemap: https://www.northvaleretirement.com/sitemap.xml
