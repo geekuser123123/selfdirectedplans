@@ -83,10 +83,10 @@ export default async (req) => {
 
   const payload = JSON.stringify({
     type: 'website_inquiry',
-    source: 'northvale-retirement-website',
+    source: 'selfdirected401kdallas-website',
     submitted_at: new Date().toISOString(),
     ...data,
-    consent_text: 'I agree that Northvale Retirement may contact me by email or phone about this inquiry.',
+    consent_text: 'I agree that Self Directed 401k Dallas may contact me by email or phone about this inquiry.',
     page: req.headers.get('referer') || null,
     // SMS marketing consent is NOT collected here and must not be inferred.
     sms_marketing_consent: false,

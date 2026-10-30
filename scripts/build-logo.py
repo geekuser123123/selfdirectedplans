@@ -1,4 +1,4 @@
-"""Build the Northvale logo system as outlined SVGs (no font dependency).
+"""Build the Self Directed 401k Dallas logo system as outlined SVGs (no font dependency).
 
 Usage: python3 -I scripts/build-logo.py
 Requires: fonttools, brotli (to read the woff2 files in assets/fonts).
@@ -46,15 +46,15 @@ def cap_height(font_file, size):
     return getattr(os2, "sCapHeight", 0) * size / font["head"].unitsPerEm
 
 
-# The monogram: two stems and a copper diagonal "path" that runs down through
-# the vale and climbs the right stem, whose angled top points north.
+# The monogram: an angular S. Two bars are joined by a copper diagonal "path"
+# that descends through the mark; chamfered corners point the way forward.
 def monogram(stem, path, ox=0, oy=0, s=1.0):
     def pts(p):
         return " ".join(f"{ox + x * s:.2f},{oy + y * s:.2f}" for x, y in p)
     return (
-        f'<polygon fill="{stem}" points="{pts([(6, 8), (14, 8), (14, 42), (6, 42)])}"/>'
-        f'<polygon fill="{stem}" points="{pts([(34, 15), (42, 6), (42, 42), (34, 42)])}"/>'
-        f'<polygon fill="{path}" points="{pts([(6, 8), (14, 8), (34, 33.5), (34, 42), (32.4, 42)])}"/>'
+        f'<polygon fill="{stem}" points="{pts([(6, 6), (42, 6), (36, 14), (6, 14)])}"/>'
+        f'<polygon fill="{stem}" points="{pts([(12, 34), (42, 34), (42, 42), (6, 42)])}"/>'
+        f'<polygon fill="{path}" points="{pts([(6, 14), (14, 14), (42, 28), (42, 34), (34, 34), (6, 20)])}"/>'
     )
 
 
@@ -62,8 +62,8 @@ def write(name, body, w, h, bg=None):
     rect = f'<rect width="{w}" height="{h}" fill="{bg}"/>' if bg else ""
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w:.0f} {h:.0f}" '
-        f'width="{w:.0f}" height="{h:.0f}" role="img" aria-label="Northvale Retirement">'
-        f"<title>Northvale Retirement</title>{rect}{body}</svg>\n"
+        f'width="{w:.0f}" height="{h:.0f}" role="img" aria-label="Self Directed 401k Dallas">'
+        f"<title>Self Directed 401k Dallas</title>{rect}{body}</svg>\n"
     )
     (OUT / name).write_text(svg)
     print("wrote", name)
@@ -79,27 +79,29 @@ def horizontal(word_fill, sub_fill, stem, path, bg=None, name=""):
     gap = 16
     word_size = 52
     word_cap = cap_height(teko, word_size)
-    sub_size = 10.5
+    sub_size = 16
     sub_cap = cap_height(poppins, sub_size)
     x0 = icon_size + gap
-    pad_top = (icon_size - (word_cap + 9 + sub_cap)) / 2
+    pad_top = (icon_size - (word_cap + 8 + sub_cap)) / 2
     word_base = pad_top + word_cap
-    word_d, word_w = text_path(teko, "NORTHVALE", word_size, 0.08, x0, word_base)
-    # Track RETIREMENT so it spans the wordmark width.
-    _, raw_w = text_path(poppins, "RETIREMENT", sub_size, 0, 0, 0)
-    tracking = (word_w - raw_w) / 9 / sub_size
-    sub_d, _ = text_path(poppins, "RETIREMENT", sub_size, tracking, x0 + 1, word_base + 9 + sub_cap)
+    word_d, word_w = text_path(teko, "SELF DIRECTED 401K", word_size, 0.05, x0, word_base)
+    sub_base = word_base + 8 + sub_cap
+    sub_d, sub_w = text_path(poppins, "DALLAS", sub_size, 0.35, x0 + 1, sub_base)
+    # A fine copper rule runs from DALLAS to the end of the wordmark.
+    rule_x = x0 + 1 + sub_w + 14
+    rule = f'<rect x="{rule_x:.2f}" y="{sub_base - sub_cap / 2 - 0.5:.2f}" width="{x0 + word_w - rule_x:.2f}" height="1" fill="{sub_fill}"/>'
     body = (
         monogram(stem, path, 0, 0, s)
         + f'<path fill="{word_fill}" d="{word_d}"/>'
         + f'<path fill="{sub_fill}" d="{sub_d}"/>'
+        + rule
     )
     write(name, body, x0 + word_w + 2, icon_size, bg)
 
 
-horizontal(WHITE, COPPER, WHITE, COPPER, name="northvale-logo-dark-bg.svg")
-horizontal(CHARCOAL, "#8A6A3E", PINE, COPPER, name="northvale-logo-light-bg.svg")
-write("northvale-icon.svg", monogram(PINE, COPPER), 48, 48)
-write("northvale-icon-light.svg", monogram(WHITE, COPPER), 48, 48)
+horizontal(WHITE, COPPER, WHITE, COPPER, name="logo-dark-bg.svg")
+horizontal(CHARCOAL, "#8A6A3E", PINE, COPPER, name="logo-light-bg.svg")
+write("icon.svg", monogram(PINE, COPPER), 48, 48)
+write("icon-light.svg", monogram(WHITE, COPPER), 48, 48)
 # Favicon: monogram on a Deep Pine tile, readable at 16px.
 write("favicon.svg", f'<rect width="48" height="48" rx="6" fill="{PINE}"/>' + monogram(WHITE, COPPER, 5, 5, 38 / 48), 48, 48)

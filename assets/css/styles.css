@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Northvale Retirement — styles
+   Self Directed 401k Dallas — styles
    1. Fonts & tokens   2. Base   3. Layout   4. Components   5. Sections
    6. Motion           7. Responsive
    ========================================================================== */
@@ -172,7 +172,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: block; flex: none; }
-.brand img { width: clamp(168px, 16vw, 210px); height: auto; }
+.brand img { width: clamp(220px, 20vw, 290px); height: auto; }
 
 .primary-nav { display: flex; align-items: center; gap: clamp(24px, 3vw, 48px); }
 .primary-nav ul { display: flex; gap: clamp(20px, 2.6vw, 40px); }
@@ -382,7 +382,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* Footer */
 .site-footer { background: var(--pine-deep); color: var(--muted-dark); padding-top: clamp(56px, 7vw, 96px); font-size: 14px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid var(--line-dark); }
-.footer-brand img { width: 210px; margin-bottom: 20px; }
+.footer-brand img { width: 290px; max-width: 100%; margin-bottom: 20px; }
 .footer-brand p { max-width: 36ch; }
 .footer-heading { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); margin-bottom: 18px; }
 .footer-col li + li { margin-top: 10px; }

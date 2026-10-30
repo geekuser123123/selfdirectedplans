@@ -19,14 +19,14 @@ const url = (p) => 'file://' + path.join(root, p);
       .img { position: absolute; inset: 0 0 0 52%; background: url(${url('assets/img/hero-960.webp')}) 40% center / cover; }
       .img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #142D30, rgba(20,45,48,.35) 55%, rgba(20,45,48,.15)); }
       .copy { position: absolute; left: 80px; top: 92px; }
-      .copy img { width: 300px; }
+      .copy img { width: 420px; }
       h1 { font: 500 112px/0.88 Teko; color: #fff; text-transform: uppercase; margin: 64px 0 0; }
       h1 span { color: #D4A66A; display: block; }
       .line { position: absolute; left: 0; bottom: 72px; width: 360px; height: 1px; background: #D4A66A; }
     </style>
     <div class="img"></div>
     <div class="copy">
-      <img src="${url('assets/brand/northvale-logo-dark-bg.svg')}">
+      <img src="${url('assets/brand/logo-dark-bg.svg')}">
       <h1>More Control.<span>More Possibility.</span></h1>
     </div>
     <div class="line"></div>`);

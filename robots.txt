@@ -3,5 +3,4 @@ Allow: /
 Disallow: /scripts/
 Disallow: /netlify/
 
-# TODO: update to the confirmed production domain.
-Sitemap: https://www.northvaleretirement.com/sitemap.xml
+Sitemap: https://www.selfdirected401kdallas.com/sitemap.xml

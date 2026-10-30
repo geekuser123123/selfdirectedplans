@@ -6,10 +6,10 @@ const path = require('path');
 
 const dir = path.join(__dirname, '..', 'assets', 'brand');
 const jobs = [
-  ['northvale-logo-dark-bg.svg', 'northvale-logo-dark-bg.png', 4],
-  ['northvale-logo-light-bg.svg', 'northvale-logo-light-bg.png', 4],
-  ['northvale-icon.svg', 'northvale-icon-512.png', 512 / 48],
-  ['northvale-icon-light.svg', 'northvale-icon-light-512.png', 512 / 48],
+  ['logo-dark-bg.svg', 'logo-dark-bg.png', 4],
+  ['logo-light-bg.svg', 'logo-light-bg.png', 4],
+  ['icon.svg', 'icon-512.png', 512 / 48],
+  ['icon-light.svg', 'icon-light-512.png', 512 / 48],
   ['favicon.svg', 'apple-touch-icon.png', 180 / 48],
   ['favicon.svg', 'favicon-32.png', 32 / 48],
   ['favicon.svg', 'icon-192.png', 192 / 48],

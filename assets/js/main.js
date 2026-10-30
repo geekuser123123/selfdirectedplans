@@ -1,4 +1,4 @@
-/* Northvale Retirement — lightweight site behaviour (no dependencies). */
+/* Self Directed 401k Dallas — lightweight site behaviour (no dependencies). */
 (function () {
   'use strict';
 
