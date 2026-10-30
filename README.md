@@ -72,7 +72,7 @@ These items need verified information I did not have, so they are marked `TODO` 
 
 - [ ] **Domain:** the site is set up for `https://www.selfdirected401kdallas.com/` (canonical, Open Graph, schema, `robots.txt`, `sitemap.xml`). Register that domain and add it in Netlify under **Domain management**. If you use a different domain, search the files for `selfdirected401kdallas.com` and replace it.
 - [ ] **Name and trademark:** confirm that "Self Directed 401k Dallas" is available and cleared, and confirm the legal business identity. Descriptive names like this can be hard to protect as trademarks.
-- [ ] **Contact details:** add the verified phone, email and address to the footer (`index.html`) and, once verified, to the Organization schema.
+- [ ] **Contact details:** the footer's business-info row (`footer-info` in `index.html`) shows `[Phone Number]`, `[Email Address]`, `[Business Hours]` and `[Service Area]` placeholders. Replace them with verified details that match the Google Business Profile exactly, and add them to the Organization schema too.
 - [ ] **Legal documents:** `privacy.html` and `terms.html` are drafts with `[bracketed]` placeholders. Counsel needs to complete them.
 - [ ] **Compliance language:** have the footer disclaimer, the FAQ answers and the service detail panels reviewed against the actual scope of the service.
 - [ ] **About copy:** it currently describes Self Directed 401k Dallas as a "proposed new identity" for The Roth Academy, as the brief specified. Update it once the rebrand is final.
