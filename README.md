@@ -89,7 +89,14 @@ These items need verified information I did not have, so they are marked `TODO` 
 - [ ] **Domain:** the site is set up for `https://www.selfdirected401kdallas.com/` (canonical, Open Graph, schema, `robots.txt`, `sitemap.xml`). Register that domain and add it in Netlify under **Domain management**. If you use a different domain, search the files for `selfdirected401kdallas.com` and replace it.
 - [ ] **Name and trademark:** confirm that "Self Directed 401k Dallas" is available and cleared, and confirm the legal business identity. Descriptive names like this can be hard to protect as trademarks.
 - [ ] **Contact details:** the footer's business-info row (`footer-info` in `index.html`) shows `[Phone Number]`, `[Email Address]`, `[Business Hours]` and `[Service Area]` placeholders. Replace them with verified details that match the Google Business Profile exactly, and add them to the Organization schema too.
-- [ ] **Legal documents:** `privacy.html` and `terms.html` are drafts with `[bracketed]` placeholders. Counsel needs to complete them.
+- [ ] **Legal documents:** `privacy.html` and `terms.html` are full drafts with a summary box, numbered sections and a contents list. Each placeholder is highlighted. Counsel needs to fill them in and confirm the content, including:
+  - the legal entity name, address, email, phone and dates;
+  - the list of service providers and the retention period;
+  - whether the Texas Data Privacy and Security Act (TDPSA) and the Gramm-Leach-Bliley Act (GLBA) apply;
+  - the liability cap and venue;
+  - whether to add an arbitration clause.
+
+  Then remove the "Draft for legal review" banner from both pages.
 - [ ] **Compliance language:** have the footer disclaimer, the FAQ answers and the service detail panels reviewed against the actual scope of the service.
 - [ ] **About copy:** it currently describes Self Directed 401k Dallas as a "proposed new identity" for The Roth Academy, as the brief specified. Update it once the rebrand is final.
 - [ ] **Photography:** the site currently uses crops of the two photos supplied with the brief, so several sections share one source photo. Replace them with distinct, licensed Unsplash/Pexels images (searches like *mature business professional portrait*, *business consultation in modern office*). Add an approved real team or founder photo to About. Do not present stock subjects as clients or staff. To re-crop a source photo, run `python3 scripts/crop-images.py <office> <consultation>` or drop in new WebP files with the same names and sizes. Then regenerate the share image with `node scripts/render-og-image.js`.
