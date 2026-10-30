@@ -88,7 +88,7 @@ These items need verified information I did not have, so they are marked `TODO` 
 
 - [ ] **Domain:** the site is set up for `https://www.selfdirected401kdallas.com/` (canonical, Open Graph, schema, `robots.txt`, `sitemap.xml`). Register that domain and add it in Netlify under **Domain management**. If you use a different domain, search the files for `selfdirected401kdallas.com` and replace it.
 - [ ] **Name and trademark:** confirm that "Self Directed 401k Dallas" is available and cleared, and confirm the legal business identity. Descriptive names like this can be hard to protect as trademarks.
-- [ ] **Contact details:** the footer's business-info row (`footer-info` in `index.html`) shows `[Phone Number]`, `[Email Address]`, `[Business Hours]` and `[Service Area]` placeholders. Replace them with verified details that match the Google Business Profile exactly, and add them to the Organization schema too.
+- [ ] **Contact details:** the footer's business-info row (`footer-info` in `index.html`) shows the phone number (469) 414-9749 plus `[Email Address]`, `[Business Hours]` and `[Service Area]` placeholders. Replace them with verified details that match the Google Business Profile exactly, and add them to the Organization schema too.
 - [ ] **Legal documents:** `privacy.html` and `terms.html` are full drafts with a summary box, numbered sections and a contents list. Each placeholder is highlighted. Counsel needs to fill them in and confirm the content, including:
   - the legal entity name, address, email, phone and dates;
   - the list of service providers and the retention period;
